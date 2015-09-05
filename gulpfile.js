@@ -113,7 +113,7 @@ gulp.task('watch', function() {
 	});
 	bs.init({
 		server: {
-			baseDir: './'
+			baseDir: './src'
 		},
 		open: false
 	});
