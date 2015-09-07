@@ -1,0 +1,56 @@
+
+$list-border-color: rgba(0,0,0,.06);
+$item-border-color: #edeef0;
+$text-color: #222222;
+
+.list {
+	color: $text-color;
+	list-style: none;
+	margin: 2rem auto 0;
+	padding: 0;
+	position: relative;
+	border: 1px solid $list-border-color;
+	border-radius: 5px;
+	width: 32.875rem;
+	max-width: 100%;
+	box-shadow: 0 1px 3px rgba(0,0,0,.1);
+}
+
+.list__item {
+	position: relative;
+	height: 2.25rem;
+	padding: .625rem;
+	border-bottom: 1px solid $item-border-color;
+	cursor: grab;
+}
+.list__item:last-of-type {
+	border-bottom: none;
+}
+
+.list__text, .list__image, .list__action {
+	display: inline-block;
+}
+
+.list__image {
+	margin: 0;
+	height: 100%;
+	box-shadow: 0 1px 5px rgba(0,0,0,.15);
+}
+
+.list__text {
+	position: absolute;
+	margin: 0;
+	margin-left: .625rem;
+	height: 2.25rem;
+	line-height: 2.25rem;
+}
+
+.list__action-button {
+	background: url('../assets/action.png') right no-repeat, white;
+	height: 100%;
+	cursor: pointer;
+	width: 42px;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
