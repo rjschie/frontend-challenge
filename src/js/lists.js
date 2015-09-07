@@ -11,6 +11,7 @@ $(function() {
 		forcePlaceholderSize: true,
 		placeholder: "list__item list__item--highlight",
 		tolerance: "pointer",
+		distance: 10,
 		start: function(e, ui) {
 			ui.item.addClass('list__item--grabbing');
 		},

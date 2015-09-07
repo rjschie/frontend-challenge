@@ -14,8 +14,12 @@
 </head>
 <body>
 
+<div style="display: none;">
+	<svg width="0" height="0" style="position:absolute"><symbol viewBox="0 0 181 310" id="arrow-right"><title>arrow-down</title><path d="M.93 20.695l137.836 133.873L.94 288.433l20.13 20.724 159.158-154.59L21.07 0 .93 20.695z" fill-rule="evenodd"/></symbol></svg>
+</div>
+
 <ul class="list js-list-sortable">
-	<li class="list__item">
+	<li class="list__item list__item--menu">
 		<img class="list__image" src="assets/icon-1_noshadow.jpg">
 		<p class="list__text">Daily Devotionals</p>
 		<div class="list__action-wrap">
@@ -24,6 +28,9 @@
 							data-title="Popover Title"
 							data-content="Popover Content">
 			</button>
+			<svg class="list__action-arrow">
+				<use xlink:href="#arrow-right"></use>
+			</svg>
 		</div>
 	</li>
 	<li class="list__item">
@@ -47,13 +54,16 @@
 			</button>
 		</div>
 	</li>
-	<li class="list__item">
+	<li class="list__item list__item--menu">
 		<img class="list__image" src="assets/icon-1_noshadow.jpg">
 		<p class="list__text">
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit,
 			sed dolor et eum eveniet harum ipsam temporibus vero?
 		</p>
 		<div class="list__action-wrap">
+			<svg class="list__action-arrow">
+				<use xlink:href="#arrow-right"></use>
+			</svg>
 			<button class="list__action-button"
 							data-toggle="popover"
 							data-title="Popover Title"

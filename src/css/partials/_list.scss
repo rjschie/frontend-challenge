@@ -26,7 +26,7 @@ $text-color: #222222;
 .list__item:last-of-type {
 	border-bottom: none;
 }
-.list__item--grabbing, .list__item:active {
+.list__item--grabbing {
 	border-bottom: none;
 	cursor: grabbing;
 	cursor: -moz-grabbing;
@@ -35,8 +35,15 @@ $text-color: #222222;
 .list__item--highlight {
 	background-color: #fefefe;
 }
+.list__item--menu {
+	cursor: pointer;
 
-.list__text, .list__image, .list__action {
+	&:hover .list__action-arrow {
+		left: 10px;
+	}
+}
+
+.list__text, .list__image, .list__action-wrap {
 	display: inline-block;
 }
 
@@ -59,16 +66,30 @@ $text-color: #222222;
 .list__action-button {
 	background: url('../assets/action.png') right no-repeat, white;
 	height: 100%;
-	cursor: pointer;
 	width: 42px;
+	cursor: pointer;
+	float: right;
+	padding: 0;
+}
+
+.list__action-arrow {
+	height: 100%;
+	width: 25px;
+	padding: 20px 0;
+	box-sizing: border-box;
+	transition: left .3s;
+	left: 0;
+	transform: translateX(3px);
+	fill: #afafaf;
+	position: relative;
 }
 
 .list__action-wrap {
 	position: absolute;
-	width: 42px;
 	height: 100%;
 	right: 0;
 	top: 0;
+	background-color: white;
 
 	&::before {
 		content: '';
@@ -76,6 +97,6 @@ $text-color: #222222;
 		width: 42px;
 		height: 100%;
 		position: absolute;
-		right: 42px;
+		left: -42px;
 	}
 }
