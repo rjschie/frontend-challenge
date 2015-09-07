@@ -38,6 +38,8 @@ $text-color: #222222;
 }
 
 .list__text {
+	word-break: break-all;
+	overflow: hidden;
 	position: absolute;
 	margin: 0;
 	margin-left: .625rem;
@@ -50,7 +52,21 @@ $text-color: #222222;
 	height: 100%;
 	cursor: pointer;
 	width: 42px;
+}
+
+.list__action-wrap {
 	position: absolute;
+	width: 42px;
+	height: 100%;
 	right: 0;
 	top: 0;
+
+	&::before {
+		content: '';
+		background: linear-gradient(to left, white, rgba(255,255,255,0));
+		width: 42px;
+		height: 100%;
+		position: absolute;
+		right: 42px;
+	}
 }
