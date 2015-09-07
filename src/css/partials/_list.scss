@@ -26,6 +26,15 @@ $text-color: #222222;
 .list__item:last-of-type {
 	border-bottom: none;
 }
+.list__item--grabbing, .list__item:active {
+	border-bottom: none;
+	cursor: grabbing;
+	cursor: -moz-grabbing;
+	cursor: -webkit-grabbing;
+}
+.list__item--highlight {
+	background-color: #fefefe;
+}
 
 .list__text, .list__image, .list__action {
 	display: inline-block;
