@@ -71,16 +71,16 @@ gulp.task('sprites', function() {
 					maxHeight: 100
 				}
 			},
-			// svg: {
-			// 	transform: [
-			// 		function(svg) {
-			// 			svg = svg.replace(/<g\s.+?>|<\/g>/g, '');
-			// 			svg = svg.replace(/fill=".+?"/g, '');
-			// 			svg = svg.replace(/stroke=".+?"/g, '');
-			// 			return svg;
-			// 		}
-			// 	]
-			// },
+			svg: {
+				transform: [
+					function(svg) {
+						svg = svg.replace(/<g\s.+?>|<\/g>/g, '');
+						svg = svg.replace(/fill=".+?"/g, '');
+						svg = svg.replace(/stroke=".+?"/g, '');
+						return svg;
+					}
+				]
+			},
 			mode: {
 				symbol: {
 					dest: '.',
