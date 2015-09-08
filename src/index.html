@@ -17,66 +17,197 @@
 <!-- SVG definitions -->
 <div style="display: none;"><svg width="0" height="0" style="position:absolute"><symbol viewBox="0 0 182 310" id="arrow-left"><title>arrow-left</title><path d="M181.072 289.305L43.235 155.433 181.06 21.567 160.93.844 1.774 155.434 160.93 310l20.142-20.695z"  fill-rule="evenodd"/></symbol><symbol viewBox="0 0 181 310" id="arrow-right"><title>arrow-down</title><path d="M.93 20.695l137.836 133.873L.94 288.433l20.13 20.724 159.158-154.59L21.07 0 .93 20.695z"  fill-rule="evenodd"/></symbol></svg></div>
 
-<ul class="list js-list-sortable">
-	<li class="list__item list__item--menu">
-		<img class="list__image" src="assets/icon-1_noshadow.jpg">
-		<p class="list__text">Daily Devotionals</p>
-		<div class="list__action-wrap">
-			<button class="list__action-button"
-							data-toggle="popover"
-							data-title="Popover Title"
-							data-content="Popover Content">
-			</button>
-			<svg class="list__action-arrow">
-				<use xlink:href="#arrow-right"></use>
-			</svg>
-		</div>
-	</li>
-	<li class="list__item">
-		<img class="list__image" src="assets/icon-2_noshadow.jpg">
-		<p class="list__text">Articles</p>
-		<div class="list__action-wrap">
-			<button class="list__action-button"
-							data-toggle="popover"
-							data-title="Popover Title"
-							data-content="Popover Content">
-			</button>
-		</div>
-	<li class="list__item">
-		<img class="list__image" src="assets/icon-3_noshadow.jpg">
-		<p class="list__text">Media Item</p>
-		<div class="list__action-wrap">
-			<button class="list__action-button"
-							data-toggle="popover"
-							data-title="Popover Title"
-							data-content="Popover Content">
-			</button>
-		</div>
-	</li>
-	<li class="list__item list__item--menu">
-		<img class="list__image" src="assets/icon-1_noshadow.jpg">
-		<p class="list__text">
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-			sed dolor et eum eveniet harum ipsam temporibus vero?
-		</p>
-		<div class="list__action-wrap">
-			<svg class="list__action-arrow">
-				<use xlink:href="#arrow-right"></use>
-			</svg>
-			<button class="list__action-button"
-							data-toggle="popover"
-							data-title="Popover Title"
-							data-content="Popover Content">
-			</button>
-		</div>
-	</li>
-</ul>
+
+<!-- List -->
+<div class="list">
+	<!-- The wrapper is for overflow hiding,
+			without affecting popup placement -->
+	<div class="list__wrapper">
+		<ul id="main-list" class="list__group js-list-sortable">
+			<li class="list__item list__item--menu js-list-item-menu"
+					data-target="devotion-list">
+			<img class="list__image" src="assets/icon-1_noshadow.jpg">
+			<p class="list__text">Daily Devotionals</p>
+			<div class="list__action-wrap">
+				<button class="list__action-button"
+								data-toggle="popover"
+								data-title="Some Title"
+								data-content="Popover Content"></button>
+				<svg class="list__action-arrow">
+					<use xlink:href="#arrow-right"></use>
+				</svg>
+			</div>
+			</li>
+			<li class="list__item list__item--menu js-list-item-menu"
+					data-target="article-list">
+				<img class="list__image" src="assets/icon-2_noshadow.jpg">
+				<p class="list__text">Articles</p>
+				<div class="list__action-wrap">
+					<button class="list__action-button"
+									data-toggle="popover"
+									data-title="Popover Title"
+									data-content="Popover Content"></button>
+					<svg class="list__action-arrow">
+						<use xlink:href="#arrow-right"></use>
+					</svg>
+				</div>
+			</li>
+			<li class="list__item">
+				<img class="list__image" src="assets/icon-3_noshadow.jpg">
+				<p class="list__text">Media Item</p>
+				<div class="list__action-wrap">
+					<button class="list__action-button"
+									data-toggle="popover"
+									data-title="Popover Title"
+									data-content="Popover Content"></button>
+				</div>
+			</li>
+			<li class="list__item">
+				<p class="list__text">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+					sed dolor et eum eveniet harum ipsam temporibus vero?
+				</p>
+				<div class="list__action-wrap">
+					<button class="list__action-button"
+									data-toggle="popover"
+									data-title="Popover Title"
+									data-content="Popover Content"></button>
+				</div>
+			</li>
+			<li class="list__item list__item--menu">
+				<p class="list__text">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+					sed dolor et eum eveniet harum ipsam temporibus vero?
+				</p>
+				<div class="list__action-wrap">
+					<svg class="list__action-arrow">
+						<use xlink:href="#arrow-right"></use>
+					</svg>
+					<button class="list__action-button"
+									data-toggle="popover"
+									data-title="Popover Title"
+									data-content="Popover Content"></button>
+				</div>
+			</li>
+		</ul>
+
+
+		<ul id="article-list"
+				class="list__group list__group--hidden js-list-sortable"
+				data-back-template="
+				<li class='list__item list__item--back js-list-item-back'>
+					<p class='list__text list__text--back'>Back</p>
+					<div class='list__action-wrap list__action-wrap--opposite'>
+						<svg class='list__action-arrow'>
+							<use xlink:href='#arrow-left'></use>
+						</svg>
+					</div>
+				</li>">
+
+			<li class="list__item">
+				<img class="list__image" src="assets/icon-2_noshadow.jpg">
+				<p class="list__text">Article 1</p>
+				<div class="list__action-wrap">
+					<button class="list__action-button"
+									data-toggle="popover"
+									data-title="Popover Title"
+									data-content="Popover Content"></button>
+				</div>
+			</li>
+			<li class="list__item">
+				<img class="list__image" src="assets/icon-2_noshadow.jpg">
+				<p class="list__text">Article 2</p>
+				<div class="list__action-wrap">
+					<button class="list__action-button"
+									data-toggle="popover"
+									data-title="Popover Title"
+									data-content="Popover Content"></button>
+				</div>
+			</li>
+			<li class="list__item">
+				<img class="list__image" src="assets/icon-2_noshadow.jpg">
+				<p class="list__text">Article 3</p>
+				<div class="list__action-wrap">
+					<button class="list__action-button"
+									data-toggle="popover"
+									data-title="Popover Title"
+									data-content="Popover Content"></button>
+				</div>
+			</li>
+		</ul>
+
+
+		<ul id="devotion-list"
+				class="list__group list__group--hidden js-list-sortable"
+				data-back-template="
+				<li class='list__item list__item--back js-list-item-back'>
+					<p class='list__text list__text--back'>Back</p>
+					<div class='list__action-wrap list__action-wrap--opposite'>
+						<svg class='list__action-arrow'>
+							<use xlink:href='#arrow-left'></use>
+						</svg>
+					</div>
+				</li>">
+
+			<li class="list__item">
+				<img class="list__image" src="assets/icon-1_noshadow.jpg">
+				<p class="list__text">Devotion 1</p>
+				<div class="list__action-wrap">
+					<button class="list__action-button"
+									data-toggle="popover"
+									data-title="Popover Title"
+									data-content="Popover Content"></button>
+				</div>
+			</li>
+			<li class="list__item">
+				<img class="list__image" src="assets/icon-1_noshadow.jpg">
+				<p class="list__text">Devotion 2</p>
+				<div class="list__action-wrap">
+					<button class="list__action-button"
+									data-toggle="popover"
+									data-title="Popover Title"
+									data-content="Popover Content"></button>
+				</div>
+			</li>
+			<li class="list__item">
+				<img class="list__image" src="assets/icon-1_noshadow.jpg">
+				<p class="list__text">Devotion 3</p>
+				<div class="list__action-wrap">
+					<button class="list__action-button"
+									data-toggle="popover"
+									data-title="Popover Title"
+									data-content="Popover Content"></button>
+				</div>
+			</li>
+			<li class="list__item">
+				<img class="list__image" src="assets/icon-1_noshadow.jpg">
+				<p class="list__text">Devotion 4</p>
+				<div class="list__action-wrap">
+					<button class="list__action-button"
+									data-toggle="popover"
+									data-title="Popover Title"
+									data-content="Popover Content"></button>
+				</div>
+			</li>
+			<li class="list__item">
+				<img class="list__image" src="assets/icon-1_noshadow.jpg">
+				<p class="list__text">Devotion 5</p>
+				<div class="list__action-wrap">
+					<button class="list__action-button"
+									data-toggle="popover"
+									data-title="Popover Title"
+									data-content="Popover Content"></button>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
 
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
 <script src="bower_components/bootstrap/js/tooltip.js"></script>
 <script src="bower_components/bootstrap/js/popover.js"></script>
-<script src="js/lists.js"></script>
+<script src="js/lists-events.js"></script>
 
 </body>
 </html>

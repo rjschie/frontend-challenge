@@ -1,0 +1,149 @@
+
+$list-border-color: #e3e3e3;
+$item-border-color: #edeef0;
+$text-color: #444;
+$item-bg-color: white;
+$item-hover-bg-color: #fafafa;
+$back-button-bg: #fafafa;
+
+
+/** Main List definitions */
+.list {
+	box-sizing: border-box;
+	margin: 2rem auto;
+	width: 32.875rem;
+	max-width: 100%;
+	border: 1px solid $list-border-color;
+	border-radius: 5px;
+	box-shadow: 0 1px 3px rgba(0,0,0,.1);
+	color: $text-color;
+}
+
+.list__wrapper {
+	position: relative;
+	overflow: hidden;
+}
+
+.list__group {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+.list__group--hidden {
+	display: none;
+}
+
+
+/** List Item definitions */
+.list__item {
+	position: relative;
+	height: 2.25rem;
+	padding: .625rem;
+	border-bottom: 1px solid $item-border-color;
+	cursor: pointer;
+}
+.list__item:last-of-type {
+	border-bottom: none;
+}
+.list__item:hover {
+	background-color: $item-hover-bg-color;
+
+	.list__action-arrow {
+		left: 10px;
+		fill: black; }
+	.list__action-wrap {
+		background-color: $item-hover-bg-color; }
+	.list__action-wrap::before { // The fade
+		background: linear-gradient(
+				to left, $item-hover-bg-color, rgba(255,255,255,0) ); }
+}
+.list__item--grabbing {
+	border-bottom: none;
+	cursor: grabbing;
+	cursor: -moz-grabbing;
+	cursor: -webkit-grabbing;
+}
+.list__item--placeholder {
+	background-color: #f3f3f3;
+}
+.list__item--back {
+	background-color: $back-button-bg;
+	color: #5dc6ff;
+
+	&:hover .list__action-arrow {
+		left: -7px;
+		fill: black; }
+}
+
+
+/** List Content definitions */
+.list__image {
+	display: inline-block;
+	margin: 0;
+	height: 100%;
+	box-shadow: 0 1px 5px rgba(0,0,0,.15);
+}
+
+.list__text {
+	display: inline-block;
+	position: absolute;
+	margin: 0;
+	margin-left: .625rem;
+	height: 2.25rem;
+	line-height: 2.25rem;
+	word-break: break-all;
+	overflow: hidden;
+}
+.list__text--back {
+	margin-left: 2rem;
+}
+
+
+/** List Action definitions */
+.list__action-button {
+	float: right;
+	height: 100%;
+	width: 42px;
+	padding: 0;
+	background: url('../assets/action.png') right no-repeat;
+	cursor: pointer;
+}
+
+.list__action-arrow {
+	position: relative;
+	left: 0;
+	height: 100%;
+	width: 25px;
+	padding: 20px 1px;  // padding 1px right/left is to fix quirk in Safari
+	box-sizing: border-box;
+	fill: #afafaf;
+	transform: translateX(3px);
+	transition: left .3s, fill .5s;
+}
+
+.list__action-wrap {
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 100%;
+	background-color: $item-bg-color;
+	color: #afafaf;
+
+	&::before {
+		content: '';
+		position: absolute;
+		width: 50px;
+		height: 100%;
+		background: linear-gradient(
+				to left, $item-bg-color, rgba(255,255,255,0) );
+		transform: translateX(-100%);
+	}
+}
+.list__action-wrap--opposite {
+	left: 0;
+	right: auto;
+	background-color: $back-button-bg;
+
+	.list__action-arrow {
+		transform: translateX(13px); }
+}
