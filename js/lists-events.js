@@ -6,7 +6,7 @@ function advanceMenu(from, toward, options) {
 	var options = options || {};
 	options.offset = options.offset || '120%';
 	options.direction = options.direction || 'left';
-	options.speed = options.speed || 500;
+	options.speed = options.speed || 300;
 	options.hideClass = options.hideClass || 'list__group--hidden';
 
 	toward.removeClass(options.hideClass);
